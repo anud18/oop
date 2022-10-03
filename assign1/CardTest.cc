@@ -139,75 +139,51 @@ int
 main(int argc, char **argv) {
 
 	int ncards=0;  // number of cards to draw 
+	int *cards;
 	if (argc==3) {
 		long seed=atoi(argv[2]); // the third argument is the seed
 		srand(seed);
 		ncards=atoi(argv[1]); // the second argument is the number of cards
-		if(ncards > 52){
-			cout << "Sorry, number of cards can not exceed 52." <<endl;
-			return 0;
-		}
-		
-		int* cards = getCard(ncards, seed);
-
-		int count = 0;
-		int group = 0;
-		int groupNumber = ncards / 5;
-		int k;
-		while(count < ncards * kCardHeight){
-			if(groupNumber == group)
-				k = (ncards - 5 * group) % 5;
-			else
-				k = 5;
-			int i = ((count - 5 * group * kCardHeight) % k) + 5 * group;
-			i %= ncards;
-			PrintCard(cards[i], ((count - 5 * group * kCardHeight)/ k ) % 11);
-			count++;
-			if((count - 5 * group * kCardHeight)% k == 0 && count)
-				cout << endl;
-			if(count % 55 == 0)
-				group++;
-		}
-
+		cards = getCard(ncards, seed);
 	} else if (argc==2) {
 		ncards=atoi(argv[1]);
-		if(ncards > 52){
-			cout << "Sorry, number of cards can not exceed 52." <<endl;
-			return 0;
-		}
-
-		int* cards = new int[ncards];
 		cards = getCard(ncards);
-
-		int count = 0;
-		int group = 0;
-		int groupNumber = ncards / 5;
-		int k;
-		while(count < ncards * kCardHeight){
-			if(groupNumber == group)
-				k = (ncards - 5 * group) % 5;
-			else
-				k = 5;
-			int i = ((count - 5 * group * kCardHeight) % k) + 5 * group;
-			i %= ncards;
-			PrintCard(cards[i], ((count - 5 * group * kCardHeight)/ k ) % 11);
-			count++;
-			if((count - 5 * group * kCardHeight)% k == 0 && count)
-				cout << endl;
-			if(count % 55 == 0)
-				group++;
-		}
 	} else {
 		PrintUsage(argv[0]);
 		exit(-1);
 	}
 
 	// You are asked to fill in a few missing statements here
+		if(ncards > 52){
+			cout << "Sorry, number of cards can not exceed 52." <<endl;
+			return 0;
+			free(cards);
+		}
+
+		int count = 0;
+		int group = 0;
+		int groupNumber = ncards / 5;
+		int k;
+		while(count < ncards * kCardHeight){
+			if(groupNumber == group)
+				k = (ncards - 5 * group) % 5;
+			else
+				k = 5;
+			int i = ((count - 5 * group * kCardHeight) % k) + 5 * group;
+			i %= ncards;
+			PrintCard(cards[i], ((count - 5 * group * kCardHeight)/ k ) % 11);
+			count++;
+			if((count - 5 * group * kCardHeight)% k == 0 && count)
+				cout << endl;
+			if(count % 55 == 0)
+				group++;
+		}
 
 
 	// Print my id at the end of the program
 
 	PrintMyID("110703060");
+	free(cards);
 
 	return 0;
 
