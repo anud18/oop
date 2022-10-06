@@ -145,9 +145,17 @@ main(int argc, char **argv) {
 		srand(seed);
 		ncards=atoi(argv[1]); // the second argument is the number of cards
 		cards = getCard(ncards, seed);
+		if(ncards > 52){
+			cout << "Sorry, number of cards can not exceed 52." <<endl;
+			return 0;
+		}
 	} else if (argc==2) {
 		ncards=atoi(argv[1]);
 		cards = getCard(ncards);
+		if(ncards > 52){
+			cout << "Sorry, number of cards can not exceed 52." <<endl;
+			return 0;
+		}
 	} else {
 		PrintUsage(argv[0]);
 		exit(-1);
@@ -157,7 +165,6 @@ main(int argc, char **argv) {
 		if(ncards > 52){
 			cout << "Sorry, number of cards can not exceed 52." <<endl;
 			return 0;
-			free(cards);
 		}
 
 		int count = 0;
