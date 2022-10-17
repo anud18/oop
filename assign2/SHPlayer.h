@@ -8,15 +8,15 @@
 
 
 enum HandType {
-    STRAIGHT_FLUSH,
-    FOUR_OF_A_KIND,
-    FULL_HOUSE,
-    FLUSH,
-    STRAIGHT,
-    THREE_OF_A_KIND,
-    TWO_PAIR,
-    ONE_PAIR,
-    OTHER
+	STRAIGHT_FLUSH,
+	FOUR_OF_A_KIND,
+	FULL_HOUSE,
+	FLUSH,
+	STRAIGHT,
+	THREE_OF_A_KIND,
+	TWO_PAIR,
+	ONE_PAIR,
+	OTHER
 };
 
 extern const char* HandTypeName[9];
@@ -31,69 +31,73 @@ extern const char* HandTypeName[9];
  */
 class SHPlayer {
 
-    public:
-        /**
-         * all initialization should be in this constructor
-         */
-        SHPlayer(const char *playerName);
+	public:
+		/**
+		 * all initialization should be in this constructor
+		 */
+		SHPlayer(const char *playerName);
 
-        /**
-         * start a new hand
-         */ 
-        void start();
+		/**
+		 * start a new hand
+		 */ 
+		void start();
 
-        /**
-         * add a card to the end of the current hand
-         */
-        void addCard(Card newCard);
+		/**
+		 * add a card to the end of the current hand
+		 */
+		void addCard(Card newCard);
 
-        /**
-         * open the first card so it faces up
-         */
-        void openFirstCard();
+		/**
+		 * open the first card so it faces up
+		 */
+		void openFirstCard();
 
-        /**
-         * print all cards of the current hand to the screen graphically
-         */
-        void showCards() const;
+		/**
+		 * print all cards of the current hand to the screen graphically
+		 */
+		void showCards() const;
 
-        /**
-         * get the total points of the current hand
-         */
-        int totalPips() const;
+		/**
+		 * get the total points of the current hand
+		 */
+		int totalPips() const;
 
-        /**
-         * determine what kind of hand pattern that the player owns
-         */
-        HandType getHandPattern();
+		/**
+		 * determine what kind of hand pattern that the player owns
+		 */
+		HandType getHandPattern();
 
-        /**
-         * return the number of cards at hand
-         */
-        int getNumCards() const;
+		/**
+		 * return the number of cards at hand
+		 */
+		int getNumCards() const;
 
-    private:
-	/**
-	 * sort the current hand of cards in an ascending order and 
-	 * store them in the sortedCards array
-	 */
-        void sortCards() ;
-        bool isStraightFlush() const;
-        bool isFourOfAKind() const;
-        bool isFullHouse() const;
-        bool isFlush() const;
-        bool isStraight() const;
-        bool isThreeOfAKind() const;
-        bool isTwoPair() const;
-        bool isOnePair() const;
+	private:
+		/**
+		 * sort the current hand of cards in an ascending order and 
+		 * store them in the sortedCards array
+		 */
+		void sortCards() ;
+		bool isStraightFlush() const;
+		bool isFourOfAKind() const;
+		bool isFullHouse() const;
+		bool isFlush() const;
+		bool isStraight() const;
+		bool isThreeOfAKind() const;
+		bool isTwoPair() const;
+		bool isOnePair() const;
 
-    private:
+	private:
 
-        static const int kMaxCards = 5;  // maximal number of cards I can hold
-	Card cards[kMaxCards];              // the current hand
-	Card sortedCards[kMaxCards];        // sorted cards
+		static const int kMaxCards = 5;  // maximal number of cards I can hold
+		Card cards[kMaxCards];              // the current hand
+		Card sortedCards[kMaxCards];        // sorted cards
 
-	// your private/internal stuff goes here
+		// your private/internal stuff goes here
+	private:
+		int numCards;
+		const char* name;
+		bool showFirstCard = false;
 
 };
 

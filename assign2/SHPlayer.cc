@@ -26,6 +26,7 @@ const char* HandTypeName[9] = {
 // constructor
 SHPlayer::SHPlayer(const char* playerName)
 {
+	this->name = playerName;
 
 }
 
@@ -33,26 +34,22 @@ SHPlayer::SHPlayer(const char* playerName)
 	void
 SHPlayer::start()
 {
-	for(int i = 0; i < kMaxCards; ++i)
-		cards[i].ID = -1;
-
+	numCards = 0;
 }
 
 // add a new card to the current hand
 // need to protect the array from overflowing
 void SHPlayer::addCard(Card newCard)
 {		
-	for(int i = 0; i < kMaxCards; ++i)
-		if(cards[i].ID != -1){
-			cards[i] = newCard;
-			break;
-	}
+	if(numCards < 5 && numCards >= 0)
+		cards[numCards++] = newCard;	
 }
 
 // open the first card so it faces up
 	void
 SHPlayer::openFirstCard()
 {
+	showFirstCard = true;
 
 }
 
@@ -60,7 +57,8 @@ SHPlayer::openFirstCard()
 void
 SHPlayer::showCards() const
 {
-
+	for(int i = 0; i < 5; ++i)
+		cout << sortedCards[i].getID() << endl;
 }
 
 // get the total points of the current hand
@@ -69,17 +67,34 @@ SHPlayer::totalPips() const
 {
 	int sum = 0;
 	for(int i = 0; i < kMaxCards; ++i)
-		if(Cards[i].ID >= 0 &&)
-			
-
-	
+		if(cards[i].getID() >= 0)
+			sum += cards[i].getID() + 1;
+	return sum;
 }
 
 // judge what kind of hand type you own
-// you need to have 5 cards
+// you need to have 5 cardsHandType
 	HandType
 SHPlayer::getHandPattern() 
 {
+	sortCards();
+	if(isStraightFlush())
+		return STRAIGHT_FLUSH;
+	if(isFourOfAKind())
+		return FOUR_OF_A_KIND;
+	if(isFullHouse())
+		return FULL_HOUSE;
+	if(isFlush())
+		return FLUSH;
+	if(isStraight())
+		return STRAIGHT;
+	if(isThreeOfAKind())
+		return THREE_OF_A_KIND;
+	if(isTwoPair())
+		return TWO_PAIR;
+	if(isOnePair())
+		return ONE_PAIR;
+	return OTHER;
 
 }
 
@@ -87,20 +102,23 @@ SHPlayer::getHandPattern()
 int
 SHPlayer::getNumCards() const
 {
-	return cards[0].ID;
-
+	int count = 0;
+	for(int i = 0; i < kMaxCards; ++i)
+		if(cards[i].getID() >= 0)
+			count++;
+	return count;
 }
 
-void
+	void
 SHPlayer::sortCards() 
 {
 	for(int i = 0; i < kMaxCards; ++i)
-		sortCards[i] = cards[i];
+		sortedCards[i].setID(cards[i].getID());
 	for(int i = 0; i < kMaxCards; ++i){
 		for(int j = i + 1; j < kMaxCards; ++j){
-			if(sortedCards[i] > sortedCards[j]){
+			if(sortedCards[i].getID() > sortedCards[j].getID()){
 				Card tmp = sortedCards[i];
-				sortedCard[i] = sortedCards[j];
+				sortedCards[i] = sortedCards[j];
 				sortedCards[j] = tmp;
 			}
 		}
@@ -111,7 +129,7 @@ SHPlayer::sortCards()
 bool 
 SHPlayer::isStraightFlush() const
 {
-
+	return isStraight() && isFlush();
 }
 
 // four cards of the same pip
