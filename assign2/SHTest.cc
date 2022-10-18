@@ -49,38 +49,6 @@ int getCard(){
 	}
 	return p;
 }
-void showHandType(HandType handType){
-	cout << "It's ";
-	switch(handType){
-		case STRAIGHT_FLUSH:
-			cout << "Straight flush" << endl;
-			break;
-		case FOUR_OF_A_KIND:
-			cout << "Four of a kind" << endl;
-			break;
-		case FULL_HOUSE:
-			cout << "Full house" << endl;
-			break;
-		case FLUSH:
-			cout << "Flush" << endl;
-			break;
-		case STRAIGHT:
-			cout << "Straight" << endl;
-			break;
-		case THREE_OF_A_KIND:
-			cout << "Three of a kind" << endl;
-			break;
-		case TWO_PAIR:
-			cout << "Two pair" << endl;
-			break;
-		case ONE_PAIR:
-			cout << "One pair" << endl;
-			break;
-		case OTHER:
-			cout << "Other" << endl;
-			break;
-	}
-}
 
 	int
 main(int argc, char** argv)
@@ -102,18 +70,20 @@ main(int argc, char** argv)
 
 
 	SHPlayer shplayer("Player");
-	shplayer.start();
 
 	// put your code here
+	shplayer.start();
 	for(int i = 0; i < 5; ++i){
-		//int jj = getCard();
 		Card tmp;
 		tmp.setID(getCard());
 		shplayer.addCard(tmp);
 	}
-	showHandType(shplayer.getHandPattern());
+	if(showFirst)
+		shplayer.openFirstCard();
 
 	shplayer.showCards();
+	cout << "It's " << HandTypeName[shplayer.getHandPattern()] << endl; 
+	cout << "Total points: " << shplayer.totalPips() << endl;
 
 
 	PrintMyID("110703060");

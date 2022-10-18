@@ -1,4 +1,4 @@
-/* Copyright (c) 1999 by The National Chengchi Univ. All Rights Reserved */
+ /*Copyright (c) 1999 by The National Chengchi Univ. All Rights Reserved */
 
 /***************************************************************************
    NAME
@@ -9,7 +9,7 @@
      Assume that you are given a deck of 52 cards. The cards do not reappear.
      That is, you do not put a card back into the deck after it is drawn.
 ***************************************************************************/
-/*const int kNPip=13;
+const int kNPip=13;
 const int kNSuit=4;
 const int kNCards=52;
 const int kCardWidth=11;
@@ -36,4 +36,4 @@ int main(){
 	int cardNumber;
 
 
-}*/
+}

@@ -10,7 +10,7 @@
    AUTHOR
      Tsai-Yen Li (li@cs.nccu.edu.tw)
    HISTORY
-     Tsai-Yen Li - Oct 5, 1998: Created.
+      Tsai-Yen Li - Oct 5, 1998: Created.
 ***************************************************************************/
 
 #include "AnsiPrint.h"

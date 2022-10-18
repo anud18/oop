@@ -57,8 +57,28 @@ SHPlayer::openFirstCard()
 void
 SHPlayer::showCards() const
 {
-	for(int i = 0; i < 5; ++i)
-		cout << sortedCards[i].getID() << endl;
+	char suit[4] = {'S', 'H', 'D', 'C'};
+	//for(int i = 0; i < 5; ++i)
+		//cout << sortedCards[i].getID() << endl;
+	for(int i = 0; i < kCardHeight; ++i){
+		for(int j = 0; j < 5; j++, cout << ' '){
+			if(j == 0 && !showFirstCard){
+				AnsiPrint(card[13][i], white, white, false, false);
+				continue;
+			}
+			string tmp1(card[cards[j].getPip()][i]);
+			for(auto& it : tmp1)
+				if(it == 'x')
+					it = suit[cards[j].getSuit()];
+			const char* tmp2 = tmp1.c_str();
+			if(cards[j].getSuit() == 0 || cards[j].getSuit() == 3)
+				AnsiPrint(tmp2, black, white, false, false);
+			else 
+				AnsiPrint(tmp2, red, white, false, false);
+
+		}
+		cout << endl;
+	}
 }
 
 // get the total points of the current hand
@@ -68,7 +88,7 @@ SHPlayer::totalPips() const
 	int sum = 0;
 	for(int i = 0; i < kMaxCards; ++i)
 		if(cards[i].getID() >= 0)
-			sum += cards[i].getID() + 1;
+			sum += cards[i].getPip() + 1;
 	return sum;
 }
 
