@@ -65,9 +65,13 @@ class SHDealer {
          */
         void showCards() const;
 
-    private:
+	private:
 
         // TODO: your private or internal stuff goes here ...
+        //only need 9 10 J Q K A
+        int index;
+        SHPlayer dealer;
+        int deck[28];
 
 };
 

@@ -2,19 +2,20 @@
 
 #include "SHPlayer.h"
 #include "SHDealer.h"
-
+#include<algorithm>
+#include <iostream>
+using namespace std;
 
 // constructor
 SHDealer::SHDealer()
+:dealer("dealer")
 {
-
 }
 
 
 // destructor
 SHDealer::~SHDealer()
 {
-
 }
 
 
@@ -22,7 +23,7 @@ SHDealer::~SHDealer()
 int
 SHDealer::giveCard()
 {
-
+    return deck[index++];
 }
 
 
@@ -30,7 +31,8 @@ SHDealer::giveCard()
 void
 SHDealer::addCard()
 {
-
+    Card tmp(deck[index++]);
+    dealer.addCard(tmp);
 }
 
 
@@ -40,6 +42,18 @@ SHDealer::addCard()
 Result
 SHDealer::judge(SHPlayer& player)
 {
+    if(player.getHandPattern() < dealer.getHandPattern())
+        return WIN;
+    else if(player.getHandPattern() > dealer.getHandPattern())
+        return LOSE;
+    else{
+        if(player.totalPips() < dealer.totalPips())
+            return LOSE;
+        else if(player.totalPips() > dealer.totalPips())
+            return WIN;
+        else 
+            return TIE;
+    }
 
 }
 
@@ -51,7 +65,15 @@ SHDealer::judge(SHPlayer& player)
 void
 SHDealer::start()
 {
-
+    
+    int i = 28;
+    for(int j = 0; j < 28; j++){
+        deck[j] = i % 52;
+        i++;
+    }
+    dealer.start();
+    this->shuffle();
+    index = 0;
 }
 
 
@@ -59,7 +81,7 @@ SHDealer::start()
 void
 SHDealer::shuffle()
 {
-
+    std::random_shuffle(deck, deck + sizeof(deck) / sizeof(deck[0]));
 }
 
 
@@ -67,7 +89,7 @@ SHDealer::shuffle()
 void
 SHDealer::openFirstCard()
 {
-
+    dealer.openFirstCard();
 }
 
 
@@ -75,5 +97,6 @@ SHDealer::openFirstCard()
 void
 SHDealer::showCards() const
 {
-
+    dealer.showCards();
 }
+

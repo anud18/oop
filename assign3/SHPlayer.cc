@@ -35,6 +35,7 @@ SHPlayer::SHPlayer(const char* playerName)
 SHPlayer::start()
 {
 	numCards = 0;
+    showFirstCard = false;
 }
 
 // add a new card to the current hand
@@ -57,11 +58,8 @@ SHPlayer::openFirstCard()
 void
 SHPlayer::showCards() const
 {
-	char suit[4] = {'S', 'H', 'D', 'C'};
-	//for(int i = 0; i < 5; ++i)
-		//cout << sortedCards[i].getID() << endl;
 	for(int i = 0; i < kCardHeight; ++i){
-		for(int j = 0; j < 5; j++, cout << ' '){
+		for(int j = 0; j < numCards; j++, cout << ' '){
 			if(j == 0 && !showFirstCard){
 				AnsiPrint(card[13][i], white, white, false, false);
 				continue;
@@ -69,7 +67,7 @@ SHPlayer::showCards() const
 			string tmp1(card[cards[j].getPip()][i]);
 			for(auto& it : tmp1)
 				if(it == 'x')
-					it = suit[cards[j].getSuit()];
+					it = cardAbbrev[cards[j].getSuit()];
 			const char* tmp2 = tmp1.c_str();
 			if(cards[j].getSuit() == 0 || cards[j].getSuit() == 3)
 				AnsiPrint(tmp2, black, white, false, false);
@@ -122,11 +120,7 @@ SHPlayer::getHandPattern()
 int
 SHPlayer::getNumCards() const
 {
-	int count = 0;
-	for(int i = 0; i < kMaxCards; ++i)
-		if(cards[i].getID() >= 0)
-			count++;
-	return count;
+    return numCards;
 }
 
 	void

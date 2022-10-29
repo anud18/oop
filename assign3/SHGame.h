@@ -4,6 +4,7 @@
 #define _SHGAME_H_
 
 #include "ConsoleMenu.h"
+#include <iostream>
 
 // forward declaration
 class SHPlayer;
@@ -43,6 +44,7 @@ class SHGame {
         void giveUp();
         // restart the game over
         void restart();
+        void show_win_point();
 
     private:
         
@@ -58,6 +60,11 @@ class SHGame {
         static const int betCredit = 1;
 
         // TODO: more data and functions to add here ...
+        int myCredit = initCredit;
+        int yourCredit = initCredit;
+        int totalBet = 0;
+        bool first_time = true;
+        bool ended = false;
 };
 
 

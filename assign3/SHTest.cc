@@ -55,7 +55,7 @@ int main(int argc, char **argv)
 
     // create an instance of player and dealer
     SHPlayer shplayer("Player");
-    SHDealer shdealer("Dealer");
+    SHDealer shdealer;
 
     // create an instance of the show hand game with the given player an dealer
     SHGame shgame(shplayer, shdealer);

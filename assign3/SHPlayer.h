@@ -95,7 +95,7 @@ class SHPlayer {
 
 		// your private/internal stuff goes here
 	private:
-		int numCards;
+		int numCards = 0;
 		const char* name;
 		bool showFirstCard = false;
 
