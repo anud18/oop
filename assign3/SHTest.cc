@@ -64,7 +64,7 @@ int main(int argc, char **argv)
     while( shgame.oneRun() );
 
     // put your ID here
-    PrintMyID("1017030xx");
+    PrintMyID("110703060");
 
     return 0;
 }

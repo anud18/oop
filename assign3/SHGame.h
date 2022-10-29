@@ -64,7 +64,7 @@ class SHGame {
         int yourCredit = initCredit;
         int totalBet = 0;
         bool first_time = true;
-        bool ended = false;
+        bool ended = true;
 };
 
 

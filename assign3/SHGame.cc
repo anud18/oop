@@ -29,7 +29,8 @@ SHGame::oneRun()
     player.showCards();
     dealer.showCards();
     menu.print();
-    switch(menu.getAnswer()){
+    int command = menu.getAnswer();
+    switch(command){
         case 1:
             moreCard();
             break;
@@ -43,14 +44,6 @@ SHGame::oneRun()
             return false;
     }
     //to be completed : show name and card
-    if(player.getNumCards() == 5 && !ended){
-        show_win_point();
-        ended = true;
-    }
-    else if(ended && yourCredit && myCredit)
-        std::cout << "GAME OVER!" << std::endl;
-    else if(yourCredit == 0 || myCredit == 0)
-        std::cout << "Sorry. Game over. No loan here." << std::endl;
     if(ended)
         dealer.openFirstCard();
 
@@ -64,13 +57,18 @@ SHGame::oneRun()
     void
 SHGame::moreCard()
 {
-    if(player.getNumCards() < 5 && !ended){
+    if((player.getNumCards() < 5 && !ended)){
         Card tmp(dealer.giveCard());
         player.addCard(tmp);
         dealer.addCard();
         totalBet += betCredit;
-
     }
+    if(player.getNumCards() == 5 && !ended){
+        show_win_point();
+        ended = true;
+    }
+    else if(ended || yourCredit <= 0 || myCredit <= 0)
+        std::cout << "GAME OVER!" << std::endl;
 }
 
 
@@ -82,9 +80,14 @@ SHGame::giveUp()
 {
     dealer.openFirstCard();
     if(!ended){
-        show_win_point();
+        myCredit += totalBet;
+        yourCredit -= totalBet;
+        std::cout << "I win. Try again. ";
+        std::cout << "(You have "<< yourCredit <<" points, I Have "<< myCredit <<" points.)" << std::endl;
     }
-    ended = true;
+    else if(ended || yourCredit <= 0 || myCredit <= 0)
+        std::cout << "GAME OVER!" << std::endl;
+           ended = true;
 }
 
 
@@ -93,14 +96,20 @@ SHGame::giveUp()
     void
 SHGame::restart()
 {
-    ended = false;
-    totalBet = 0;
-    player.start();
-    dealer.start();
-    player.openFirstCard();
-    for(int i = 0; i < 2; ++i){
-        moreCard();
+    if(myCredit <= 0 || yourCredit <= 0)
+        std::cout << "Sorry. Game over. No loan here." << std::endl;
+    else if(ended){
+        ended = false;
+        totalBet = 0;
+        player.start();
+        dealer.start();
+        player.openFirstCard();
+        for(int i = 0; i < 2; ++i){
+            moreCard();
+        }
     }
+    else
+        std::cout << "Game is not over yet. Choose 'give up' to end a game" << std::endl;
 }
 void SHGame::show_win_point(){
     switch(dealer.judge(player)){
