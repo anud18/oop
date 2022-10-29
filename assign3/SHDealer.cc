@@ -8,7 +8,7 @@ using namespace std;
 
 // constructor
 SHDealer::SHDealer()
-:dealer("dealer")
+:dealer("Dealer")
 {
 }
 
