@@ -76,6 +76,7 @@ SHPlayer::showCards() const
 				AnsiPrint(tmp2, black, white, false, false);
 			else 
 				AnsiPrint(tmp2, red, white, false, false);
+            //cout << cards[j].getID() <<' ' << cards[j].getPip() << ' ';
 
 		}
 		cout << endl;

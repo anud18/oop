@@ -23,7 +23,14 @@ SHDealer::~SHDealer()
 int
 SHDealer::giveCard()
 {
-    return deck[index++];
+    while(1){
+        int RNumber = rand() % 24;
+        if(!flag[RNumber]){
+            flag[RNumber] = true;
+            return deck[RNumber];
+        }
+    }
+    //return test[index];
 }
 
 
@@ -31,8 +38,17 @@ SHDealer::giveCard()
 void
 SHDealer::addCard()
 {
-    Card tmp(deck[index++]);
+    int RNumber = rand() % 24;
+    while(flag[RNumber]){
+        RNumber = rand() % 24;
+    }
+    flag[RNumber] = true;
+    Card tmp(deck[RNumber]);
     dealer.addCard(tmp);
+    //Card tmp(_test[index]);
+    //index++;
+    //dealer.addCard(tmp);
+    
 }
 
 
@@ -42,6 +58,7 @@ SHDealer::addCard()
 Result
 SHDealer::judge(SHPlayer& player)
 {
+    //cout << "I " << dealer.getHandPattern() << " you " << player.getHandPattern() << endl;
     if(player.getHandPattern() < dealer.getHandPattern())
         return WIN;
     else if(player.getHandPattern() > dealer.getHandPattern())
@@ -68,12 +85,11 @@ SHDealer::start()
     
     int i = 32;
     for(int j = 0; j < 24; j++){
+        flag[j] = false;
         deck[j] = i % 52;
         i++;
     }
     dealer.start();
-    this->shuffle();
-    index = 0;
 }
 
 

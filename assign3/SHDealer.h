@@ -69,9 +69,12 @@ class SHDealer {
 
         // TODO: your private or internal stuff goes here ...
         //only need 9 10 J Q K A
-        int index;
         SHPlayer dealer;
         int deck[24];
+        bool flag[24] = {false};
+        //int test[5] = {0, 37, 41, 45, 49};
+        //int _test[5] = {3, 1, 50, 42, 43};
+        //int index = 0;
 
 };
 
