@@ -67,7 +67,7 @@ SHPlayer::showCards() const
 				AnsiPrint(card[13][i], white, white, false, false);
 				continue;
 			}
-			string tmp1(card[cards[j].getPip()][i]);
+			string tmp1(card[cards[j].getPip() == 13 ? 0 : cards[j].getPip()][i]);
 			for(auto& it : tmp1)
 				if(it == 'x')
 					it = cardAbbrev[cards[j].getSuit()];
@@ -90,8 +90,6 @@ SHPlayer::totalPips() const
 	int sum = 0;
 	for(int i = 0; i < kMaxCards; ++i)
 		if(cards[i].getID() >= 0){
-			if(cards[i].getPip() == 0)
-                sum += 13;
             sum += cards[i].getPip() + 1;
         }
 	return sum;

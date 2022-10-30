@@ -71,7 +71,7 @@ class SHDealer {
         //only need 9 10 J Q K A
         int index;
         SHPlayer dealer;
-        int deck[28];
+        int deck[24];
 
 };
 

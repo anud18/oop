@@ -66,8 +66,8 @@ void
 SHDealer::start()
 {
     
-    int i = 28;
-    for(int j = 0; j < 28; j++){
+    int i = 32;
+    for(int j = 0; j < 24; j++){
         deck[j] = i % 52;
         i++;
     }

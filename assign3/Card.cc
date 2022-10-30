@@ -8,7 +8,7 @@ using namespace std;
 // constructor
 Card::Card(int newId)
 {
-	setID(newId);
+    setID(newId);
 }
 
 // Accessor: card id is an integer between 0 and 51.
@@ -19,28 +19,34 @@ Card::Card(int newId)
 int
 Card::getID() const 
 {
-	return ID;
+    if((ID / 4) == 0)
+        return ID + 52;
+    else
+        return ID;
 }
 
 // get the pip of the card (0-12)
 int
 Card::getPip() const
 {
-	return ID / 4;
+    if((ID / 4) == 0)
+        return ((ID / 4) + 13);
+    else
+        return ID / 4;
 }
 
 // get the suit of the card (0-3)
 int
 Card::getSuit() const
 {
-	return ID % 4;
+    return ID % 4;
 }
 
 // set id directly
-void
+    void
 Card::setID(int newId)
 {
-	ID = newId;
+    ID = newId;
 }
 
 
