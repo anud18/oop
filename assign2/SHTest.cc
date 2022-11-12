@@ -47,7 +47,7 @@ int getCard(){
 		p = rand() % 52;
 	}
 		take[p] = true;
-    cout << p << ' ';
+    //cout << p << ' ';
 	return p;
 }
 

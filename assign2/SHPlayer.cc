@@ -59,7 +59,6 @@ SHPlayer::showCards() const
 {
 	char suit[4] = {'S', 'H', 'D', 'C'};
 	//for(int i = 0; i < 5; ++i)
-		//cout << sortedCards[i].getID() << endl;
 	for(int i = 0; i < kCardHeight; ++i){
 		for(int j = 0; j < 5; j++, cout << ' '){
 			if(j == 0 && !showFirstCard){
