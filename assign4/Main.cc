@@ -112,5 +112,5 @@ main() {
   cout << "\tv6 = " << v6 ;
   cout << "\tlength = " << v6.length() << endl;
   //
-  PrintMyID("XXX703xxx");
+  PrintMyID("110703060");
 }
