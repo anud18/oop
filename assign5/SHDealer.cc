@@ -97,18 +97,5 @@ SHDealer::shuffle()
 }
 
 
-// open the SHPlayer::s first card
-void
-SHDealer::openFirstCard()
-{
-    SHPlayer::openFirstCard();
-}
 
-
-// show the SHPlayer::s hand to the screen
-void
-SHDealer::showCards() const
-{
-    SHPlayer::showCards();
-}
 

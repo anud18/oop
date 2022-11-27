@@ -98,7 +98,6 @@ class SHPlayer {
 		int numCards = 0;
 		const char* name;
 		bool showFirstCard = false;
-
 };
 
 #endif // _SHPLAYER_H_

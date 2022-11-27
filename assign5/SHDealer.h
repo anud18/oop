@@ -50,10 +50,6 @@ class SHDealer : public SHPlayer{
          */
         void start();
 
-        /**
-         * open the first card so it faces up
-         */
-        void openFirstCard();
 
         /**
          * retain the whole set of cards and shuffle
@@ -63,18 +59,12 @@ class SHDealer : public SHPlayer{
         /**
          * show the dealer's cards to the screen
          */
-        void showCards() const;
 
 	private:
 
         // TODO: your private or internal stuff goes here ...
-        //only need 9 10 J Q K A
-        //SHPlayer dealer;
         int deck[24];
         bool flag[24] = {false};
-        //int test[5] = {0, 37, 41, 45, 49};
-        //int _test[5] = {3, 1, 50, 42, 43};
-        //int index = 0;
 
 };
 
