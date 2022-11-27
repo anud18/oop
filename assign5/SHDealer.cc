@@ -35,17 +35,17 @@ SHDealer::giveCard()
 
 
 // give the SHPlayer::a card
-void
-SHDealer::addCard()
-{
-    int RNumber = rand() % 24;
-    while(flag[RNumber]){
-        RNumber = rand() % 24;
-    }
-    flag[RNumber] = true;
-    Card tmp(deck[RNumber]);
-    SHPlayer::addCard(tmp);
-}
+//void
+//SHDealer::addCard()
+//{
+    //int RNumber = rand() % 24;
+    //while(flag[RNumber]){
+        //RNumber = rand() % 24;
+    //}
+    //flag[RNumber] = true;
+    //Card tmp(deck[RNumber]);
+    //SHPlayer::addCard(tmp);
+//}
 
 
 // determind who has win the game.
@@ -55,14 +55,14 @@ Result
 SHDealer::judge(SHPlayer& player)
 {
     //cout << "I " << SHPlayer::getHandPattern() << " you " << player.getHandPattern() << endl;
-    if(player.getHandPattern() < SHPlayer::getHandPattern())
+    if(player.getHandPattern() < getHandPattern())
         return WIN;
-    else if(player.getHandPattern() > SHPlayer::getHandPattern())
+    else if(player.getHandPattern() > getHandPattern())
         return LOSE;
     else{
-        if(player.totalPips() < SHPlayer::totalPips())
+        if(player.totalPips() < totalPips())
             return LOSE;
-        else if(player.totalPips() > SHPlayer::totalPips())
+        else if(player.totalPips() > totalPips())
             return WIN;
         else 
             return TIE;

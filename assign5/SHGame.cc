@@ -60,7 +60,8 @@ SHGame::moreCard()
     if((player.getNumCards() < 5 && !ended)){
         Card tmp(dealer.giveCard());
         player.addCard(tmp);
-        dealer.addCard();
+        Card _tmp(dealer.giveCard());
+        dealer.addCard(_tmp);
         totalBet += betCredit;
     }
     if(player.getNumCards() == 5 && !ended){

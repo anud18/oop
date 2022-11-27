@@ -37,7 +37,7 @@ class SHDealer : public SHPlayer{
         /**
          * give myself(the dealer) onmore card
          */
-        void addCard();
+        //void addCard();
 
         /**
          * judge who has won the game
