@@ -45,10 +45,6 @@ SHDealer::addCard()
     flag[RNumber] = true;
     Card tmp(deck[RNumber]);
     SHPlayer::addCard(tmp);
-    //Card tmp(_test[index]);
-    //index++;
-    //SHPlayer::addCard(tmp);
-    
 }
 
 
