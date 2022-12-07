@@ -1,0 +1,331 @@
+round: 1
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                                         I                            
+1                       I                                              
+2                                                                      
+3                                                                      
+4                                                 I                    
+5                                                                      
+6   I                                                                  
+7     I                                                 X              
+8                                             X                        
+9                                                                      
+0                                                                      
+1                                                                      
+2                                                                      
+3                                                                      
+4                                       I         I                    
+5                     I                                                
+6                                                                      
+7                         I                                       X    
+8                                                                   X  
+9                   X                                                  
+round: 2
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                                         I                            
+1                       I                                              
+2                                                                      
+3                                                                      
+4                                                 I                    
+5                                                                      
+6   I                                                                  
+7     I                                               X                
+8                                               X                      
+9                                                                      
+0                                                                      
+1                                                                      
+2                                                                      
+3                                                                      
+4                                       I         I                    
+5                     I                                                
+6                                                                      
+7                         I                                         X  
+8                   X                                               X  
+9                                                                      
+round: 3
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                                         I                            
+1                       I                                              
+2                                                                      
+3                                                                      
+4                                                 I                    
+5                                                                      
+6   I                                                 X                
+7     I                                                                
+8                                                                      
+9                                                 X                    
+0                                                                      
+1                                                                      
+2                                                                      
+3                                                                      
+4                                       I         I                    
+5                     I                                                
+6                                                                     X
+7                   X     I                                            
+8                                                                   X  
+9                                                                      
+round: 4
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                                         I                            
+1                     I I                 I                            
+2                                                                      
+3                                                                      
+4                                                 I                    
+5                                                                      
+6   I I                                                 X              
+7     I                                                                
+8                                                                      
+9                                                                      
+0                                                 X                    
+1                                                                      
+2                                                                      
+3                                                                      
+4                                     I I         I                    
+5                     I I                                              
+6                                                                     X
+7                   X   I I                                         X  
+8                                                                      
+9                                                                      
+round: 5
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                   I                            
+1                     I I                 I                            
+2                                                                      
+3                                                                      
+4                                                 I                    
+5                                               I                      
+6   I I                                               X                
+7   I I                                                                
+8                                                                      
+9                                                                      
+0                                               X                      
+1                                                                      
+2                                                                      
+3                                         I                            
+4                                     I I       I I                    
+5                     I I                                             X
+6                   X                                                 X
+7                       I I                                            
+8                           I                                          
+9                                                                      
+round: 6
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                   I                            
+1                     I I I               I                            
+2                                                                      
+3                                                                      
+4                                                 I                    
+5 I                                             I   X                  
+6   I I                                                                
+7   I I                                                                
+8                                                                      
+9                                                                      
+0                                               X                      
+1                                                                      
+2                                                                      
+3                                       I I                            
+4                                     I I       I I                    
+5                     I I                                             X
+6                   X I                                             X  
+7                       I I                                            
+8                       I   I                                          
+9                                                                      
+round: 7
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                                                
+1                     I   I             I I                            
+2                                                                      
+3                                                                      
+4                                                                      
+5 I     I                                       I                      
+6     I                                           X                    
+7   I                                                                  
+8                                                                      
+9                                               X                      
+0                                                                      
+1                                                                      
+2                                                                      
+3                                       I I                            
+4                                   I I         I                      
+5                       I                                             X
+6                     X                                                
+7                       I I                                         X  
+8                       I   I                                          
+9                                                                      
+round: 8
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                                                
+1                     I I I             I I                            
+2                                                                      
+3                                                                      
+4                                                                      
+5 I     I                                       I                      
+6     I                                                                
+7 I I                                           X                      
+8                                                                      
+9                                                 X                    
+0                                                                      
+1                                                                      
+2                                                                      
+3                                       I I                            
+4                                   I I   I     I                      
+5                     X I                       I                     X
+6                       I                                         X    
+7                     I I I                                            
+8                       I   I                                          
+9                                                                      
+round: 9
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                                                
+1                     I I I             I I                            
+2                       I                   I                          
+3                                                                      
+4                                                                      
+5 I     I                                       I                      
+6   I I                                                                
+7 I I                                         X                        
+8                                                                      
+9                                                                      
+0                                               X                      
+1                                                                      
+2                                         I                            
+3                                       I I   I                        
+4                     X             I I   I     I                      
+5                       I             I         I                      
+6                       I                                           X  
+7                     I I I                                       X    
+8                     I I   I                                          
+9                                                                      
+round: 10
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I                 I                              
+1                       I I             I                              
+2                       I                   I                          
+3                                                                      
+4                                               I                      
+5 I     I                                       I                      
+6 I I I I                                     X                        
+7 I I                                                                  
+8                                                                      
+9                                                                      
+0                                                                      
+1                                               X                      
+2                                         I                            
+3                                     I I I   I                        
+4                     X             I     I     I I                    
+5                                 I   I         I                      
+6                       I                                         X X  
+7                     I   I                                            
+8                     I I   I                                          
+9                             I                                        
+round: 11
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                       I               I                              
+1                       I I I           I                              
+2                       I                   I                          
+3                                                                      
+4                                               I                      
+5 I     I I                                                            
+6 I I I I                                     X                        
+7 I                                                                    
+8                                                                      
+9                                                                      
+0                                               X                      
+1                                                                      
+2                                         I                            
+3                                   I I I   I I                        
+4                     X             I     I       I                    
+5                     I           I   I         I                   X  
+6                       I                                              
+7                     I I I                                         X  
+8                     I I   I                                          
+9                             I                                        
+round: 12
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                       I               I                              
+1                       I   I           I                              
+2                       I I                 I I                        
+3                     I                                                
+4       I                                       I                      
+5       I I                                                            
+6 I I I I                                       X                      
+7 I                                                                    
+8 I                                                                    
+9                                                                      
+0                                                 X                    
+1                                                                      
+2                                         I   I                        
+3                                 I I I     I I                        
+4                       X           I   I I   I   I                    
+5                     I           I   I         I                      
+6                       I                                         X    
+7                     I I I                                            
+8                     I I   I                                         X
+9                             I                                        
+round: 13
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                       I               I                              
+1                       I   I                                          
+2                       I I               I I I                        
+3                     I                                                
+4       I                                       I I                    
+5       I I                                                            
+6 I I I I                                                              
+7 I                                           X                        
+8 I                                                                    
+9                                                                      
+0                                                                      
+1                                                 X                    
+2                                         I   I                        
+3                                 I I I   I I I                        
+4                                       I I   I   I I                  
+5                     I   X       I   I         I               X      
+6                     I I         I             I                      
+7                     I I                                             X
+8                     I I   I                                          
+9                   I         I I                                      
+round: 14
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I I               I                              
+1                           I                                          
+2                       I I               I I I                        
+3                     I                     I                          
+4       I                                       I I                    
+5       I I                                                            
+6 I I I I I                                                            
+7     I                                       X                        
+8 I                                                                    
+9                                                                      
+0                                                                      
+1                                                   X                  
+2                                   I I   I I I                        
+3                                 I I I   I I I   I                    
+4                       I X       I   I I     I   I I                  
+5                     I           I   I                       X        
+6                     I           I             I                      
+7                       I                                              
+8                   I I I   I                                         X
+9                   I         I I                                      
+round: 15
+  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4
+0                     I I               I                              
+1                           I                                          
+2                         I I             I   I                        
+3       I           I I                     I   I                      
+4       I                                       I I                    
+5 I     I I                                   I                        
+6 I I I I I                                                            
+7     I                                     X                          
+8 I                                                                    
+9 I                                                                    
+0                                                                      
+1                                                                      
+2                                   I I     I I     X                  
+3                       X         I I I I I I   I I                    
+4                       I         I   I I   I I   I I                  
+5                     I           I         I               X          
+6                     I           I             I                      
+7                       I                                           X  
+8                   I   I   I                                          
+9                   I     I   I I                                      
+[1;5;33;41mID: 110703060[0m
